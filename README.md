@@ -2,58 +2,61 @@
 
 ## Project Description
 
-This project provides a shell script to fetch and display the current status and recent incidents from Opsgenie's status page. It utilizes the Opsgenie API to retrieve real-time information about the service's status and recent incidents.
+This project provides a shell script to check the current status of Opsgenie and retrieve information about recent incidents. It uses the Opsgenie Status Page API to fetch real-time data and presents it in a user-friendly format on the command line.
 
 ## Installation
 
-To use this script, you need to have the following prerequisites installed on your system:
+To use this script, you need to have the following dependencies installed:
 
-- Bash shell
+- Bash
 - curl
-- jq (command-line JSON processor)
+- jq
 
-No additional installation is required for the script itself. Simply download the `opsgenie_info.sh` file to your local machine.
+Make sure these are installed on your system before proceeding.
 
 ## Usage
 
-1. Make sure the script is executable:
-   ```
-   chmod +x opsgenie_info.sh
-   ```
+1. Clone this repository to your local machine:
 
-2. Run the script:
-   ```
-   ./opsgenie_info.sh
-   ```
+```
+git clone https://github.com/your-username/opsgenie-status-checker.git
+cd opsgenie-status-checker
+```
 
-The script will output the current status of Opsgenie and information about the last 3 incidents, including their names, creation dates, and statuses.
+2. Make the script executable:
+
+```
+chmod +x opsgenie_info.sh
+```
+
+3. Run the script:
+
+```
+./opsgenie_info.sh
+```
+
+The script will output the current status of Opsgenie and information about the last 3 incidents, including their names, creation times, and current statuses.
 
 ## Contributing
 
 Contributions to this project are welcome. Please follow these steps to contribute:
 
 1. Fork the repository
-2. Create a new branch for your feature or bug fix
-3. Make your changes and commit them with descriptive commit messages
-4. Push your changes to your fork
-5. Submit a pull request to the main repository
+2. Create a new branch (`git checkout -b feature/your-feature-name`)
+3. Make your changes
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin feature/your-feature-name`)
+6. Create a new Pull Request
 
-Please ensure that your code follows the existing style and that you have tested your changes before submitting a pull request.
-
-## Script Details
+## Shell Script Details
 
 ### opsgenie_info.sh
 
-This Bash script performs the following actions:
+This script performs the following actions:
 
-1. Defines a function `get_api_data` to fetch data from the Opsgenie API using curl.
+1. Defines a function `get_api_data()` to fetch data from the Opsgenie Status Page API.
 2. Retrieves the current status of Opsgenie.
 3. Fetches information about the last 3 incidents.
-4. Outputs the results to the command line, including:
-   - Current status description
-   - For each of the last 3 incidents:
-     - Issue name
-     - Creation date
-     - Status
+4. Outputs the results to the command line in a readable format.
 
-The script uses `jq` to parse the JSON responses from the API and extract the relevant information.
+The script uses `curl` to make API requests and `jq` to parse the JSON responses. It provides a quick and easy way to check Opsgenie's status and recent incidents without needing to visit the status page website.
