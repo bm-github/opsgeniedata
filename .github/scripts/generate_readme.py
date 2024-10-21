@@ -15,7 +15,7 @@ def get_file_contents(file_path):
 def scan_repository():
     file_types = {
         'Terraform Files': '**/*.tf',
-        'Terraform Variables Files': '**/*.tfvars',
+        'Powershell Files': '**/*.ps1',
         'Shell Scripts': '**/*.sh',
         'Python Scripts': '**/*.py'
     }
